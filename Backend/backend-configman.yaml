@@ -12,4 +12,4 @@ data:
   DATABASE_PASS: "7}h38d}*Ui0("
   DATABASE_USER: "postgres"
   DATABASE_NAME: "postgres"
-  ALLOWED_HOST: []
+  ALLOWED_HOST: "[]"
