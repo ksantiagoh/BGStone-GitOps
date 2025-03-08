@@ -31,5 +31,5 @@ spec:
                 name: "svc-backendapp"
                 port: 
                   number: 8007
-            path: /*
+            path: /api/v1
             pathType: ImplementationSpecific
