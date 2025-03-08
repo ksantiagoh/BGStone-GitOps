@@ -13,6 +13,7 @@ metadata:
     alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=180
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:433177513144:certificate/e88e9a57-8d7a-43e1-b664-0ada8851ffa2
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS13-1-2-Res-2021-06
+    alb.ingress.kubernetes.io/healthcheck-path: /api/v1
     kubernetes.io/ingress.class: alb
   labels:
     app: web-server
