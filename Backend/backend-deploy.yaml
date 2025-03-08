@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backendapp
+  labels:
+    app: backendapp
+    env: pro
+    partition: bgstone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backendapp
+  template:
+    metadata:
+      name: pod-backendapp
+      labels:
+        app: backendapp
+        env: pro
+        partition: bgstone
+    spec:
+      containers:
+      - name: container-backendapp
+        image: 433177513144.dkr.ecr.us-west-2.amazonaws.com/bgstone/backend:1
+        ports:
+          - containerPort: 
+        envFrom:
+        - configMapRef:
+            name: backend-config

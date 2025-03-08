@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "sws-ingress"
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/group.name: project-alb
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/backend-protocol: HTTP
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    alb.ingress.kubernetes.io/success-codes: 200-399
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=180
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-2:433177513144:certificate/e88e9a57-8d7a-43e1-b664-0ada8851ffa2
+    alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS13-1-2-Res-2021-06
+    kubernetes.io/ingress.class: alb
+  labels:
+    app: web-server
+    env: pro
+    partition: web-server
+spec:
+  tls:
+  - hosts:
+    - multicredito.demoservices.online
+  rules:
+    - host: 
+      http:
+        paths:
+          - backend:
+              service: 
+                name: "svc-backendapp"
+                port: 
+                  number: 8007
+            path: /*
+            pathType: ImplementationSpecific
