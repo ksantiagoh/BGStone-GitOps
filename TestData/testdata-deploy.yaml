@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
       - name: container-testdataapp
-        image: 433177513144.dkr.ecr.us-west-2.amazonaws.com/bgstone/testdata:1
+        image: 433177513144.dkr.ecr.us-west-2.amazonaws.com/bgstone/testdata:2
         ports:
           - containerPort: 8080
