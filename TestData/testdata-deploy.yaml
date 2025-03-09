@@ -24,6 +24,3 @@ spec:
         image: 433177513144.dkr.ecr.us-west-2.amazonaws.com/bgstone/testdata:1
         ports:
           - containerPort: 8080
-        envFrom:
-        - configMapRef:
-            name: testdataapp-config
