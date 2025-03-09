@@ -7,9 +7,9 @@ metadata:
     env: pro
     partition: bgstone
 data:
-  DATABASE_HOST: "project-db-dev.cwlhngk63bop.us-west-2.rds.amazonaws.com"
+  DATABASE_HOST: "project-postgres.cwlhngk63bop.us-west-2.rds.amazonaws.com"
   DATABASE_PORT: "5432"
-  DATABASE_PASS: "7}h38d}*Ui0("
+  DATABASE_PASS: "fCU641Vqxkkq"
   DATABASE_USER: "postgres"
   DATABASE_NAME: "postgres"
   ALLOWED_HOST: "['*']"
