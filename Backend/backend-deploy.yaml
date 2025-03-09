@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: container-backendapp
-        image: 433177513144.dkr.ecr.us-west-2.amazonaws.com/bgstone/backend:5
+        image: 433177513144.dkr.ecr.us-west-2.amazonaws.com/bgstone/backend:6
         ports:
           - containerPort: 8007
         envFrom:
