@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontendapp
+  labels:
+    app: frontendapp
+    env: pro
+    partition: bgstone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontendapp
+  template:
+    metadata:
+      name: pod-frontendapp
+      labels:
+        app: frontendapp
+        env: pro
+        partition: bgstone
+    spec:
+      containers:
+      - name: container-frontendapp
+        image: 433177513144.dkr.ecr.us-west-2.amazonaws.com/bgstone/frontend:1
+        ports:
+          - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: frontendapp-config

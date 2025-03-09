@@ -41,3 +41,10 @@ spec:
                   number: 8007
             path: /admin/*
             pathType: ImplementationSpecific
+          - backend:
+              service: 
+                name: "svc-frontendapp"
+                port: 
+                  number: 3000
+            path: /*
+            pathType: ImplementationSpecific

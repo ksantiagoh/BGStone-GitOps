@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontendapp-config
+  labels:
+    app: frontend
+    env: pro
+    partition: bgstone
+data:
+  HACKATON_API_KEY: "hckhvPb6qYAO5p2d1R27dkjvtitwcvYXLGlSW0NmmbbSbPBLeFf05s1vOUDHNkfjpdkGAZbb8nhlczQzgnHCs4HQTZur9p2tY2a8JB4ZG4qk6jT9OQpy84R1BaRi7n02ZrjygWyEZtU8ngHmnY4KxlSur38iSiMfV6vb4II1vgckb2cNOonT0ge3LloAgkNswdMYbwnBYri5VeiIGlJo64mKvFtd81g0pPdHWo25QgIuj7XvGUrxQFg1DVxhPvpB"
+  BURO_SCORE_THRESHOLD: "800"
