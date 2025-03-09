@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testdataapp
+  labels:
+    app: testdataapp
+    env: pro
+    partition: bgstone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testdataapp
+  template:
+    metadata:
+      name: pod-testdataapp
+      labels:
+        app: testdataapp
+        env: pro
+        partition: bgstone
+    spec:
+      containers:
+      - name: container-testdataapp
+        image: 433177513144.dkr.ecr.us-west-2.amazonaws.com/bgstone/testdata:1
+        ports:
+          - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: testdataapp-config

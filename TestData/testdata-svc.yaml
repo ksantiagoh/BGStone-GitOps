@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-testdataapp
+  labels:
+    app: testdataapp
+    env: pro
+    partition: bgstone
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: testdataapp
+  sessionAffinity: None
+  type: ClusterIP
